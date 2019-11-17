@@ -1,0 +1,7 @@
+{
+  "name": "szirineapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
