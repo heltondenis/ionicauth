@@ -1,41 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 const data = [
-{
-  id: '1',
-  title: 'A History of the Great Wild West of America',
-  subtitle: 'The story of Chicago and its hinterland',
-  published: {
-    month: 'March',
-    day: '6',
-    year: '2017'
+  {
+    id: '1',
+    title: 'Nasa confirma existência de água na lua de Júpiter',
+    subtitle: 'Equipe do Goddard Space Flight Center encontrou traços de vapor de água na lua de Júpiter',
+    published: {
+      month: 'Dezembro',
+      day: '2',
+      year: '2019'
+    },
+    thumbnail: 'https://img.olhardigital.com.br/uploads/acervo_imagens/2019/11/r16x9/20191119084908_1200_675_-_lua_europa.jpg',
+    text: 'A Nasa confirmou que a equipe de pesquisadores do Goddard Space Flight Center encontrou traços de vapor de água acima da superfície da lua de Júpiter, a Europa. Essa é uma grande descoberta, já que o satélite natural do planeta é uma das prioridades na busca de vida extraterrestre.'
   },
-  thumbnail: 'http://www.szirine.com/wpmain/uploads/2017/03/Ferris-wheel-1893-768x568.jpg',
-  text: 'The story of Chicago and its hinterland is one of the wildest histories of socio-economic growth you will encounter. In our time perhaps only comparable with the rapid growth of the Chinese economy and population.'
-},
-{
-  id: '2',
-  title: 'Anne Dunn',
-  subtitle: 'Anne Dunn (born 1929) is an English artist of the second School of London.',
-  published: {
-    month: 'Feb',
-    day: '7',
-    year: '2016'
+  {
+    id: '2',
+    title: 'Governo disponibiliza atendimento virtual via WhatsApp',
+    subtitle: 'Os usuários podem ter suas dúvidas respondidas por meio do aplicativo de mensagens; a ideia do governo é economizar até R$ 260 mil por ano com a nova função.',
+    published: {
+      month: 'Dezembro',
+      day: '4',
+      year: '2019'
+    },
+    thumbnail: 'https://img.olhardigital.com.br/uploads/acervo_imagens/2019/04/r16x9/20190409072534_1200_675_-_whatsapp.jpg',
+    text: 'Como forma de inovar e baratear custos, o Ministério da Economia mudou a forma como atende usuários do ComprasNet, Plataforma +Brasil e Sistema de Concessão de Diárias e Passagens. A partir desta semana, todo atendimento para responder dúvidas será feito por WhatsApp.'
   },
-  thumbnail: 'http://www.szirine.com/wpmain/uploads/2016/02/Screen-Shot-2016-02-07-at-15.45.39.png',
-  text: 'Anne Dunn’s paintings seem to explore the middle zones: Between being and not being, between beauty and decay. Fruit and Swallow (1956) depicts bright sliced fruit beside a dead blue swallow. Vines After Rain (1959) explores a half seen landscape, abstracted, colourful and suggestive of movement.'
-},
-{
-  id: '3',
-  title: 'Can neuroscience help us understand Art?',
-  subtitle: 'A debate between Gabrielle Starr and Alva Noe at NYU\'s Case Italiana.',
-  published: {
-    month: 'Dec',
-    day: '13',
-    year: '2015'
-  },
-  thumbnail: 'http://www.szirine.com/wpmain/uploads/2015/12/fnhum-06-00066-g006.jpg',
-  text: 'One of my favorite garage punk songs by English artists is the Headcoats’ ‘Art or Arse’ with Billy Childish (from Tracey Emin). It raises the question of all times, ‘What is Art?’. To answer this, one could look at the neural activity during an aesthetic experience. At NYU’s Casa Italiana, Gabrielle Starr and Alva Noe debate the role of neuroscience.'
-}
+  {
+    id: '3',
+    title: 'Carteira Digital de Trânsito vai alertar motorista sobre multas pelo celular',
+    subtitle: 'Entre as novidades também está a notificação de recall, consulta de infrações e notificações sobre quando a CNH estiver próxima do vencimento.',
+    published: {
+      month: 'Dezembro',
+      day: '3',
+      year: '2019'
+    },
+    thumbnail: 'https://img.olhardigital.com.br/uploads/acervo_imagens/2019/11/r16x9/20191119092129_1200_675_-_carteira_digital_de_transito.jpg',
+    text: 'A nova versão da Carteira Digital de Trânsito (CDT) foi disponibilizada nesta segunda-feira (18) pelo Departamento Nacional de Trânsito (Denatran), órgão relacionado ao Ministério da Infraestrutura. O lançamento ocorreu em São Paulo, durante a abertura do Salão Duas Rodas e entre as novidades do aplicativo está a possibilidade de consultar infrações registradas no nome do condutor, receber alertas sobre quando a CNH estiver próxima do vencimento e notificações para o motorista em caso de "recall" do automóvel.'
+  }
 ];
 @Component({
   selector: 'app-feed',
@@ -46,13 +46,9 @@ export class FeedPage implements OnInit {
 
   articles: any = [];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.articles = data;
-  }
-  
-  openArticle(index: number) {
-    console.log('TODO');
   }
 }
