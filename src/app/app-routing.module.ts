@@ -7,7 +7,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule', canActivate: [AuthGuard] },
+  { path: 'profile', loadChildren: './settings/settings.module#ProfilePageModule', canActivate: [AuthGuard] },
   { path: 'login', loadChildren: './auth/login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule' }
 ];
@@ -18,4 +18,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
