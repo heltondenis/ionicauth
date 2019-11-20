@@ -51,4 +51,8 @@ export class FeedPage implements OnInit {
   ngOnInit() {
     this.articles = data;
   }
+
+  openArticle(i) {
+    alert('Index do artigo: ' + i);
+  }
 }

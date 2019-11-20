@@ -1,23 +1,22 @@
 import { Platform } from '@ionic/angular';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, from } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { tap } from 'rxjs/operators';
 import { AuthResponse } from '../models/auth-response';
+import { environment } from '../../environments/environment';
+
 const TOKEN_KEY = 'auth-token';
+
 @Injectable({
   providedIn: 'root'
 })
 
-/**
- * See: https://ionicframework.com/docs/building/storage
- */
-
 export class AuthenticationService {
 
-  AUTH_SERVER_ADDRESS: string = 'http://api.agendec.com.br/api';
+  API: string = environment.API;  
   authenticationState = new BehaviorSubject(false);
 
   constructor(private storage: Storage, private platform: Platform, private httpClient: HttpClient) {
@@ -42,14 +41,16 @@ export class AuthenticationService {
   }
   
   login(user: User): Observable<AuthResponse> {
-    return this.httpClient.post(`${this.AUTH_SERVER_ADDRESS}/login`, user).pipe(
+    return this.httpClient.post(`${this.API}/login`, user).pipe(
       tap(async (res: AuthResponse) => {
-
-        if (res['success'].token) {
-          const token = 'Bearer ' + res['success'].token;
+        console.log(res['token']);
+        if (res['token']) {
+          const token = 'Bearer ' + res['token'];
           return this.storage.set(TOKEN_KEY, token).then(() => {
             this.authenticationState.next(true);
           });
+        } else {
+          alert('Login incorreto!');
         }
       })
     );
