@@ -7,7 +7,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  { path: 'profile', loadChildren: './settings/settings.module#ProfilePageModule', canActivate: [AuthGuard] },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule', canActivate: [AuthGuard] },
   { path: 'login', loadChildren: './auth/login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule' }
 ];
